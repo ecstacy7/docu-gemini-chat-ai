@@ -1,73 +1,82 @@
-# Welcome to your Lovable project
 
-## Project info
+# AI Document Assistant
 
-**URL**: https://lovable.dev/projects/018670fd-7e44-45b2-8f42-e4757930b40e
+A modern document processing platform that allows users to upload documents and ask questions about them using AI.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **Document Upload**: Support for PDF, TXT, DOC, DOCX, JPG, JPEG, PNG files
+- **Drag & Drop Interface**: Modern, intuitive file upload experience
+- **AI-Powered Q&A**: Ask questions about your uploaded documents
+- **Real-time Chat**: Interactive chat interface with the AI assistant
+- **Backend Health Monitoring**: Real-time status indicator for backend connectivity
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/018670fd-7e44-45b2-8f42-e4757930b40e) and start prompting.
+### Frontend
+- React 18 with TypeScript
+- Tailwind CSS for styling
+- shadcn/ui components
+- Lucide React icons
+- Sonner for toast notifications
 
-Changes made via Lovable will be committed automatically to this repo.
+### Backend (Your existing Python backend)
+- Flask with CORS support
+- SQLite database for document storage
+- Google Gemini AI for document analysis
+- Support for multiple file formats (PDF, DOC, images)
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
+- Node.js & npm (for frontend)
+- Python 3.x (for backend)
+- Google Gemini API key
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Frontend Setup
+1. Clone this repository
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+4. The frontend will be available at `http://localhost:8080`
 
-Follow these steps:
+### Backend Setup (Your existing code)
+1. Set up your Python environment
+2. Install required packages: `pip install flask flask-cors google-generativeai PyPDF2 python-docx pillow python-dotenv`
+3. Create a `.env` file with your Gemini API key: `GEMINI_API_KEY=your_api_key_here`
+4. Run the backend: `python app.py`
+5. The backend will be available at `http://localhost:5000`
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Key Improvements Made
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Fixed File Upload Issues
+- **Persistent File Display**: File information now stays visible even if upload fails
+- **Better Error Handling**: Comprehensive error states and user feedback
+- **Loading States**: Clear visual feedback during upload and processing
+- **State Management**: Proper React state management to prevent UI flickering
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Enhanced User Experience
+- **Modern UI**: Clean, responsive design with shadcn/ui components
+- **Real-time Feedback**: Toast notifications for all user actions
+- **Health Check**: Backend connectivity status indicator
+- **Drag & Drop**: Intuitive file upload with visual feedback
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### Robust Architecture
+- **TypeScript**: Type-safe development
+- **Component-based**: Modular, maintainable code structure
+- **Error Boundaries**: Graceful error handling throughout the app
 
-**Edit a file directly in GitHub**
+## API Endpoints
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `POST /upload`: Upload and process documents
+- `POST /chat`: Send questions about uploaded documents
+- `GET /health`: Backend health check
 
-**Use GitHub Codespaces**
+## File Support
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **Documents**: PDF, TXT, DOC, DOCX
+- **Images**: JPG, JPEG, PNG (with OCR placeholder)
+- **Size Limit**: Configurable (displays file size in MB)
 
-## What technologies are used for this project?
+## Contributing
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/018670fd-7e44-45b2-8f42-e4757930b40e) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This platform integrates with your existing Python backend while providing a modern, React-based frontend experience.
